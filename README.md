@@ -3,7 +3,7 @@
 ## Requirements
 1.  openjdk-7
 2.  maven [Apache Maven 3.2.5](http://maven.apache.org/download.cgi)
-3.  postgresql 9.4
+3.  postgresql 9.3
 4.  tomcat 7 [Apache Tomcat 7.0.59](http://tomcat.apache.org/download-70.cgi)
 
 ## Setup Maven
@@ -16,6 +16,9 @@ If you don't want to locally, just use the server. That will be setup for you.
 Follow the guide on the download link for Tomcat
 
 ## How to build
+If you want to build on your local machine:
+
+
 In the filters/ directory, make a copy of the dev.properties file named local.properties. Change the path to where you want to store the datasource.properties file. This should be outside the git repo. The contents of the file datasource.properties should be similar to this:
 
 ``` ini
@@ -25,7 +28,7 @@ pgsql.driver.username=your_user
 pgsql.driver.password=your_password
 ```
 
-Make sure to change the username and password for your specific setup if you are doing this on your local machine. If you are using the server, you do not need to worry about it.
+Make sure to change the username and password for your specific setup if you are doing this on your local machine. If you are using the server, you do not need to worry about it. On the server change the path in dev.properties to be /home/YOURUSERNAME/datasource.properties. The connection information to the database is already setup and configured for you. We each have our own database within postgres. This can allow us all to work from the server with out stepping on each others toes.
 
 
 To compile the application locally:
