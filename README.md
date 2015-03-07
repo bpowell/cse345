@@ -51,3 +51,16 @@ deploy
 ```
 
 deploy is a script that will deploy the application just for you. This way we can all be working on the same machine with out conflicts.
+
+
+To start tomcat if it is not already started
+```bash
+tomcatstart
+```
+
+To stop tomcat if it is already started
+```bash
+tomcatstop
+```
+
+Please use the tomcat commands to start and stop tomcat if needed. 
