@@ -12,5 +12,8 @@
   </head>
 
 	<body>
+    ${type}
+    <br />
+    ${size}
 	</body>
 </html>
