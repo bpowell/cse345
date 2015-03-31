@@ -4,10 +4,10 @@ public class IngredientType {
         public int id;
         public String name;
 
-        IngredientType(int id, String name) {
+        public IngredientType(int id, String name) {
                 this.id = id;
                 this.name = name;
         }
 
-        IngredientType() {}
+        public IngredientType() {}
 }
