@@ -15,10 +15,12 @@ import org.slf4j.LoggerFactory;
 
 import edu.oakland.cse345.service.IngredientTypesService;
 import edu.oakland.cse345.service.IngredientService;
+import edu.oakland.cse345.service.RequirementsService;
 import edu.oakland.cse345.service.MealTypesService;
 import edu.oakland.cse345.mvc.models.IngredientType;
 import edu.oakland.cse345.mvc.models.Ingredient;
 import edu.oakland.cse345.mvc.models.MealType;
+import edu.oakland.cse345.mvc.models.Requirements;
 
 import java.util.List;
 import java.util.Objects;
@@ -33,6 +35,8 @@ public class MainController{
     MealTypesService mealType;
     @Autowired
     IngredientService ingredientService;
+    @Autowired
+    RequirementsService requirement;
 
     @RequestMapping("/")
     public String getIndex(Model model){
@@ -100,5 +104,20 @@ public class MainController{
             ingredientService.insertIngredient(i);
 
             return "redirect:ingredient";
+    }
+
+    @RequestMapping(value="/requirements", method=RequestMethod.GET)
+    public String getRequirementss(Model model) {
+        List<Requirements> types = requirement.getAllRequirements();
+        model.addAttribute("types", types.toArray());
+
+        return "requirements";
+    }
+
+    @RequestMapping(value="/requirements", method=RequestMethod.POST)
+    public String getRequirementss(Model model, @RequestParam("recipe") int rid, @RequestParam("ingredient") int iid) {
+            requirement.insertRequirements(rid, iid);
+
+            return "redirect:requirements";
     }
 }
