@@ -10,4 +10,7 @@ public class IngredientType {
         }
 
         public IngredientType() {}
+
+        public int getId() {return id;}
+        public String getName() {return name;}
 }
