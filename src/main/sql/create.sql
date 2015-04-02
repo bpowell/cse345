@@ -15,7 +15,7 @@ create table ingredient (
     name        varchar(100) NOT NULL,
     quantity    integer NOT NULL,
     type_id     integer references ingredient_type(id),
-    bought_date date NOT NULL
+    bought_date varchar(100) NOT NULL
 )
 ;
 
