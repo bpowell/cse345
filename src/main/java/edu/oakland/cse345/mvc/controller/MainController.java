@@ -7,6 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ import edu.oakland.cse345.service.IngredientTypesService;
 import edu.oakland.cse345.mvc.models.IngredientType;
 
 import java.util.List;
+import java.util.Objects;
 
 @Controller
 public class MainController{
@@ -35,5 +37,22 @@ public class MainController{
         List<IngredientType> types = indgredientType.getAllIngredientType();
         model.addAttribute("size", types.size());
         return "index";
+    }
+
+    @RequestMapping(value="/ingredienttypes", method=RequestMethod.GET)
+    public String getIngredientTypes(Model model) {
+        List<IngredientType> types = indgredientType.getAllIngredientType();
+        model.addAttribute("types", types.toArray());
+
+        return "ingredienttypes";
+    }
+
+    @RequestMapping(value="/ingredienttypes", method=RequestMethod.POST)
+    public String getIngredientTypes(Model model, @RequestParam("name") String name) {
+            if(!Objects.equals(name, null)) {
+                    indgredientType.insertIngredientType(name);
+            }
+
+            return "redirect:ingredienttypes";
     }
 }
