@@ -46,3 +46,20 @@ create table employee (
     wage    integer NOT NULL
 )
 ;   
+
+insert into meal_type (name) values('Breakfast');
+insert into meal_type (name) values('Lunch');
+insert into meal_type (name) values('Dinner');
+insert into meal_type (name) values('Dessert');
+insert into meal_type (name) values('Appetizer');
+
+
+insert into ingredient_type (name) values('Meat');
+insert into ingredient_type (name) values('Grain');
+insert into ingredient_type (name) values('Dairy');
+insert into ingredient_type (name) values('Vegetable');
+insert into ingredient_type (name) values('Fruit');
+insert into ingredient_type (name) values('Other');
+
+
+insert into ingredient (name, quantity, type_id, bought_date) values('Alfredo Sauce',10,6,'1/15/15');
