@@ -32,7 +32,8 @@ create table recipes (
     meal_id         integer references meal_type(id),
     requirements_id integer references requirements(id),
     stars           integer,
-    num_sold        integer
+    num_sold        integer,
+    cost            integer
 )
 ;
 
