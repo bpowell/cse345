@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 import edu.oakland.cse345.service.IngredientTypesService;
 import edu.oakland.cse345.service.IngredientService;
 import edu.oakland.cse345.service.RequirementsService;
+import edu.oakland.cse345.service.EmployeeService;
 import edu.oakland.cse345.service.RecipesService;
 import edu.oakland.cse345.service.MealTypesService;
 import edu.oakland.cse345.mvc.models.IngredientType;
@@ -23,6 +24,7 @@ import edu.oakland.cse345.mvc.models.Ingredient;
 import edu.oakland.cse345.mvc.models.MealType;
 import edu.oakland.cse345.mvc.models.Recipes;
 import edu.oakland.cse345.mvc.models.Requirements;
+import edu.oakland.cse345.mvc.models.Employee;
 
 import java.util.List;
 import java.util.Objects;
@@ -41,17 +43,11 @@ public class MainController{
     RequirementsService requirement;
     @Autowired
     RecipesService recipe;
+    @Autowired
+    EmployeeService employee;
 
     @RequestMapping("/")
     public String getIndex(Model model){
-        log.trace("MainController -> Entering getIndex(model=)");
-        log.trace("MainController -> Leaving getIndex(): index");
-        indgredientType.insertIngredientType("test");
-        String type = indgredientType.getIngredientType(1);
-        model.addAttribute("type", type);
-
-        List<IngredientType> types = indgredientType.getAllIngredientType();
-        model.addAttribute("size", types.size());
         return "index";
     }
 
@@ -138,5 +134,13 @@ public class MainController{
             recipe.insertRecipes(name, m, r, s, n, c);
 
             return "redirect:recipes";
+    }
+
+    @RequestMapping(value="/employee", method=RequestMethod.GET)
+    public String getEmployees(Model model) {
+        List<Employee> types = employee.getAllEmployees();
+        model.addAttribute("types", types.toArray());
+
+        return "employee";
     }
 }
