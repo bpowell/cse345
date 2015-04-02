@@ -90,3 +90,55 @@ insert into ingredient (name, quantity, type_id, bought_date) values('Seasonings
 insert into ingredient (name, quantity, type_id, bought_date) values('Sugar',22,6,'1/20/15');
 insert into ingredient (name, quantity, type_id, bought_date) values('Tomato',19,4,'3/25/15');
 insert into ingredient (name, quantity, type_id, bought_date) values('Tomato Sauce',11,6,'3/1/15');
+
+
+insert into requirements (recipes_id, ingredient_id) values(1,1);
+insert into requirements (recipes_id, ingredient_id) values(2,1);
+insert into requirements (recipes_id, ingredient_id) values(3,1);
+insert into requirements (recipes_id, ingredient_id) values(4,1);
+insert into requirements (recipes_id, ingredient_id) values(5,1);
+insert into requirements (recipes_id, ingredient_id) values(6,1);
+insert into requirements (recipes_id, ingredient_id) values(7,1);
+insert into requirements (recipes_id, ingredient_id) values(8,1);
+insert into requirements (recipes_id, ingredient_id) values(9,1);
+insert into requirements (recipes_id, ingredient_id) values(10,1);
+insert into requirements (recipes_id, ingredient_id) values(11,1);
+insert into requirements (recipes_id, ingredient_id) values(12,1);
+insert into requirements (recipes_id, ingredient_id) values(13,1);
+insert into requirements (recipes_id, ingredient_id) values(14,1);
+insert into requirements (recipes_id, ingredient_id) values(15,1);
+insert into requirements (recipes_id, ingredient_id) values(16,1);
+insert into requirements (recipes_id, ingredient_id) values(17,1);
+insert into requirements (recipes_id, ingredient_id) values(18,1);
+insert into requirements (recipes_id, ingredient_id) values(19,1);
+insert into requirements (recipes_id, ingredient_id) values(20,1);
+insert into requirements (recipes_id, ingredient_id) values(21,1);
+insert into requirements (recipes_id, ingredient_id) values(22,1);
+insert into requirements (recipes_id, ingredient_id) values(23,1);
+
+
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('French Fries',5,1,4,500,5);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Wings',5,2,4,300,5);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Mozzarella Sticks',5,3,5,600,5);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Pancakes',1,4,3,200,6);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Waffles',1,5,5,300,5);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Omelette',1,6,4,400,7);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Hashbrowns',1,7,3,200,4);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('French Toast',1,8,5,450,7);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('BLT Sandwich',2,9,4,500,8);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Grilled Cheese',2,10,5,500,7);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('SQL Soup',2,11,5,600,6);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Tomato Soup',2,12,5,630,5);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Caesar Salad',2,13,4,200,8);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Boolean Burger',3,14,5,350,10);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Pasta',3,15,4,321,9);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Primary Key Prime Rib',3,16,5,204,18);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Pizza',3,17,4,405,10);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Chicken Tenders',3,18,3,122,7);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Fish and Chips',3,19,4,400,10);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Lobster',3,20,5,255,17);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Vanilla Ice Cream',4,21,3,394,3);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Apple Pie',4,22,5,600,5);
+insert into recipes (name, meal_id, requirements_id, stars, num_sold, cost) values('Brownie Supreme',4,23,5,402,5);
+
+
