@@ -41,9 +41,7 @@
           <ul class="nav nav-sidebar">
             <li><a href="ingredient">Ingredients</a></li>
             <li><a href="requirements">Requirements</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
+            <li><a href="recipes">Recipes</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="">Nav item again</a></li>

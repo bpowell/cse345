@@ -16,10 +16,12 @@ import org.slf4j.LoggerFactory;
 import edu.oakland.cse345.service.IngredientTypesService;
 import edu.oakland.cse345.service.IngredientService;
 import edu.oakland.cse345.service.RequirementsService;
+import edu.oakland.cse345.service.RecipesService;
 import edu.oakland.cse345.service.MealTypesService;
 import edu.oakland.cse345.mvc.models.IngredientType;
 import edu.oakland.cse345.mvc.models.Ingredient;
 import edu.oakland.cse345.mvc.models.MealType;
+import edu.oakland.cse345.mvc.models.Recipes;
 import edu.oakland.cse345.mvc.models.Requirements;
 
 import java.util.List;
@@ -37,6 +39,8 @@ public class MainController{
     IngredientService ingredientService;
     @Autowired
     RequirementsService requirement;
+    @Autowired
+    RecipesService recipe;
 
     @RequestMapping("/")
     public String getIndex(Model model){
@@ -119,5 +123,20 @@ public class MainController{
             requirement.insertRequirements(rid, iid);
 
             return "redirect:requirements";
+    }
+
+    @RequestMapping(value="/recipes", method=RequestMethod.GET)
+    public String getRecipess(Model model) {
+        List<Recipes> types = recipe.getAllRecipes();
+        model.addAttribute("types", types.toArray());
+
+        return "recipes";
+    }
+
+    @RequestMapping(value="/recipes", method=RequestMethod.POST)
+    public String getRecipess(Model model, @RequestParam("name") String name, @RequestParam("m") int m, @RequestParam("r") int r, @RequestParam("n") int n, @RequestParam("s") int s, @RequestParam("c") int c) {
+            recipe.insertRecipes(name, m, r, s, n, c);
+
+            return "redirect:recipes";
     }
 }
