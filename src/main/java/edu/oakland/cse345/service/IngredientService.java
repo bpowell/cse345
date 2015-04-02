@@ -18,6 +18,16 @@ import org.springframework.jdbc.core.simple.*;
 public class IngredientService extends AbstractJdbcDriver {
 	protected final Logger log = LoggerFactory.getLogger(getClass());
 
+public List<Ingredient> getByName(String name) {
+	List<Ingredient> l = new ArrayList<Ingredient>();
+	try {
+		l.addAll(this.jdbcPostgres.query("select * from ingredient where name like ?", new Object[] {name}, new IngredientMapper()));
+	} catch(Exception e) {
+		log.error("{}", e);
+	}
+	return l;
+}
+	
     public Ingredient getIngredient(int id) {
             Ingredient i = null;
             try {

@@ -13,6 +13,12 @@
         <input type="submit" value="Add">
 </form>
 <br />
+<form action="search" method="POST">
+	Item Name: <input type="text" name="name" />
+	<input type="hidden" name="type" value="ingredient" />
+	<input type="submit" value="Search">
+</form>
+<br />
 <br />
 
 <h2>List of Ingredients</h2>
