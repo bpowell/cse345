@@ -14,8 +14,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import edu.oakland.cse345.service.IngredientTypesService;
+import edu.oakland.cse345.service.IngredientService;
 import edu.oakland.cse345.service.MealTypesService;
 import edu.oakland.cse345.mvc.models.IngredientType;
+import edu.oakland.cse345.mvc.models.Ingredient;
 import edu.oakland.cse345.mvc.models.MealType;
 
 import java.util.List;
@@ -29,6 +31,8 @@ public class MainController{
     IngredientTypesService indgredientType;
     @Autowired
     MealTypesService mealType;
+    @Autowired
+    IngredientService ingredientService;
 
     @RequestMapping("/")
     public String getIndex(Model model){
@@ -75,5 +79,26 @@ public class MainController{
             }
 
             return "redirect:mealtypes";
+    }
+
+    @RequestMapping(value="/ingredient", method=RequestMethod.GET)
+    public String getIngredients(Model model) {
+        List<Ingredient> types = ingredientService.getAllIngredient();
+        model.addAttribute("types", types.toArray());
+
+        return "ingredient";
+    }
+
+    @RequestMapping(value="/ingredient", method=RequestMethod.POST)
+    public String getIngredients(Model model, @RequestParam("name") String name, @RequestParam("quantity") int q, @RequestParam("type") int t, @RequestParam("bought_date") String b) {
+            Ingredient i = new Ingredient();
+            i.name = name;
+            i.quantity = q;
+            i.type_id = t;
+            i.bought_date = b;
+
+            ingredientService.insertIngredient(i);
+
+            return "redirect:ingredient";
     }
 }

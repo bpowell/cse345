@@ -37,10 +37,9 @@
             <li class="active"><a href="#">Overview</a></li>
             <li><a href="ingredienttypes">Ingredient Types</a></li>
             <li><a href="mealtypes">Meal Types</a></li>
-            <li><a href="#">Export</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
+            <li><a href="ingredient">Ingredients</a></li>
             <li><a href="">Nav item again</a></li>
             <li><a href="">One more nav</a></li>
             <li><a href="">Another nav item</a></li>
