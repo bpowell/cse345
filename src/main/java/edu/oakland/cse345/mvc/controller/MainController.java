@@ -144,14 +144,14 @@ public class MainController{
         return "employee";
     }
 
-@RequestMapping(value="/search", method=RequestMethod.POST)
-public String search(Model model, @RequestParam("name") String name, @RequestParam("type") String type) {
-	if(type.equals("ingredient")) {
-		List<Ingredient> types = ingredientService.getByName(name);
-		model.addAttribute("types", types);
-		return "forward:ingredient";
-	}
+    @RequestMapping(value="/search", method=RequestMethod.POST)
+            public String search(Model model, @RequestParam("name") String name, @RequestParam("type") String type) {
+                    if(type.equals("ingredient")) {
+                            List<Ingredient> types = ingredientService.getByName(name);
+                            model.addAttribute("types", types);
+                            return "ingredient";
+                    }
 
-return "";
-}
+                    return "";
+            }
 }
