@@ -27,6 +27,7 @@ import edu.oakland.cse345.mvc.models.Requirements;
 import edu.oakland.cse345.mvc.models.Employee;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Objects;
 
 @Controller
@@ -154,4 +155,14 @@ public class MainController{
 
                     return "";
             }
+
+    @RequestMapping(value="/rinfo", method=RequestMethod.POST)
+    public String search(Model model, @RequestParam("id") int id) {
+        List<Recipes> types = new ArrayList<Recipes>();
+        types.add(recipe.getRecipes(id));
+        model.addAttribute("types", types.toArray());
+        log.info("size {}", types.size());
+        log.info("{}", types.get(0).name);
+        return "rinfo";
+    }
 }
