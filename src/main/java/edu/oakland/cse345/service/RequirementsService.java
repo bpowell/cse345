@@ -29,7 +29,7 @@ public class RequirementsService extends AbstractJdbcDriver {
 
     public void insertRequirements(int rid, int iid) {
             try {
-                    this.jdbcPostgres.update("insert into requirements (recipes_id, ingredient_id) values (?, ?)", rid, iid);
+                    this.jdbcPostgres.update("insert into requirements (menu_items_id, ingredient_id) values (?, ?)", rid, iid);
             } catch(Exception e) {
                     log.error("{}", e);
             }
@@ -49,7 +49,7 @@ public class RequirementsService extends AbstractJdbcDriver {
             public Requirements mapRow(ResultSet rs, int rowNum) throws SQLException {
                     Requirements r = new Requirements();
                     r.id = rs.getInt("id");
-                    r.recipes_id = rs.getInt("recipes_id");
+                    r.menu_items_id = rs.getInt("menu_items_id");
                     r.ingredient_id = rs.getInt("ingredient_id");
                     return r;
             }

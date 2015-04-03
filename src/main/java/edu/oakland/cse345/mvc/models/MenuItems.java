@@ -1,6 +1,6 @@
 package edu.oakland.cse345.mvc.models;
 
-public class Recipes {
+public class MenuItems {
         public int id;
         public String name;
         public int requirements_id;
@@ -9,7 +9,7 @@ public class Recipes {
         public int num_sold;
         public int cost;
 
-        public Recipes() {}
+        public MenuItems() {}
         public int getId() {return id;}
         public String getName() {return name;}
         public int getRequirements_id() {return requirements_id;}

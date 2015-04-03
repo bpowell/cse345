@@ -17,12 +17,12 @@ import edu.oakland.cse345.service.IngredientTypesService;
 import edu.oakland.cse345.service.IngredientService;
 import edu.oakland.cse345.service.RequirementsService;
 import edu.oakland.cse345.service.EmployeeService;
-import edu.oakland.cse345.service.RecipesService;
+import edu.oakland.cse345.service.MenuItemsService;
 import edu.oakland.cse345.service.MealTypesService;
 import edu.oakland.cse345.mvc.models.IngredientType;
 import edu.oakland.cse345.mvc.models.Ingredient;
 import edu.oakland.cse345.mvc.models.MealType;
-import edu.oakland.cse345.mvc.models.Recipes;
+import edu.oakland.cse345.mvc.models.MenuItems;
 import edu.oakland.cse345.mvc.models.Requirements;
 import edu.oakland.cse345.mvc.models.Employee;
 
@@ -43,7 +43,7 @@ public class MainController{
     @Autowired
     RequirementsService requirement;
     @Autowired
-    RecipesService recipe;
+    MenuItemsService menu_item;
     @Autowired
     EmployeeService employee;
 
@@ -116,25 +116,25 @@ public class MainController{
     }
 
     @RequestMapping(value="/requirements", method=RequestMethod.POST)
-    public String getRequirementss(Model model, @RequestParam("recipe") int rid, @RequestParam("ingredient") int iid) {
+    public String getRequirementss(Model model, @RequestParam("menu_item") int rid, @RequestParam("ingredient") int iid) {
             requirement.insertRequirements(rid, iid);
 
             return "redirect:requirements";
     }
 
-    @RequestMapping(value="/recipes", method=RequestMethod.GET)
-    public String getRecipess(Model model) {
-        List<Recipes> types = recipe.getAllRecipes();
+    @RequestMapping(value="/menu_items", method=RequestMethod.GET)
+    public String getMenuItemss(Model model) {
+        List<MenuItems> types = menu_item.getAllMenuItems();
         model.addAttribute("types", types.toArray());
 
-        return "recipes";
+        return "menu_items";
     }
 
-    @RequestMapping(value="/recipes", method=RequestMethod.POST)
-    public String getRecipess(Model model, @RequestParam("name") String name, @RequestParam("m") int m, @RequestParam("r") int r, @RequestParam("n") int n, @RequestParam("s") int s, @RequestParam("c") int c) {
-            recipe.insertRecipes(name, m, r, s, n, c);
+    @RequestMapping(value="/menu_items", method=RequestMethod.POST)
+    public String getMenuItemss(Model model, @RequestParam("name") String name, @RequestParam("m") int m, @RequestParam("r") int r, @RequestParam("n") int n, @RequestParam("s") int s, @RequestParam("c") int c) {
+            menu_item.insertMenuItems(name, m, r, s, n, c);
 
-            return "redirect:recipes";
+            return "redirect:menu_items";
     }
 
     @RequestMapping(value="/employee", method=RequestMethod.GET)
@@ -158,8 +158,8 @@ public class MainController{
 
     @RequestMapping(value="/rinfo", method=RequestMethod.POST)
     public String search(Model model, @RequestParam("id") int id) {
-        List<Recipes> types = new ArrayList<Recipes>();
-        types.add(recipe.getRecipes(id));
+        List<MenuItems> types = new ArrayList<MenuItems>();
+        types.add(menu_item.getMenuItems(id));
         model.addAttribute("types", types.toArray());
         log.info("size {}", types.size());
         log.info("{}", types.get(0).name);

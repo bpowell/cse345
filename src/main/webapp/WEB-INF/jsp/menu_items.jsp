@@ -2,10 +2,10 @@
 <%@ taglib prefix='form' uri='http://www.springframework.org/tags/form' %>
 <jsp:directive.include file="header.jsp" />
 
-<div class="page-header"><h1>Recipes</h1></div>
+<div class="page-header"><h1>Menu Items</h1></div>
 
-<h2>Insert Requirement</h2>
-<form action="recipes" method="POST">
+<h2>Insert Menu Items</h2>
+<form action="menu_items" method="POST">
         Name: <input type="text" name="name" /><br />
         Meal Id: <input type="text" name="m" /><br />
         Requirements Id: <input type="text" name="r" /><br />
@@ -17,7 +17,7 @@
 <br />
 <br />
 
-<h2>List of Recipes</h2>
+<h2>List of Menu Items</h2>
 <table style="width:100%">
         <tr>
                 <th>Id</th>

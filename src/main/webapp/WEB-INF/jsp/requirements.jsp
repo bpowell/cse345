@@ -6,7 +6,7 @@
 
 <h2>Insert Requirement</h2>
 <form action="requirements" method="POST">
-        Recipe Id: <input type="text" name="recipe" /><br />
+        Menu Item Id: <input type="text" name="menu_item" /><br />
         Ingredient Id: <input type="text" name="ingredient" /><br />
         <input type="submit" value="Add">
 </form>
@@ -17,13 +17,13 @@
 <table style="width:100%">
         <tr>
                 <th>Id</th>
-                <th>Recipe Id</th>
+                <th>Menu Item Id</th>
                 <th>Ingredient Id</th>
         </tr>
 <c:forEach items="${types}" var="t">
 <tr>      
         <td>${t.getId()}</td>
-        <td>${t.getRecipes_id()}</td>
+        <td>${t.getMenuItems_id()}</td>
         <td>${t.getIngredient_id()}</td>
 </tr>
 </c:forEach>
