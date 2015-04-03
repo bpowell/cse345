@@ -43,7 +43,7 @@
           <ul class="nav nav-sidebar">
             <li><a href="ingredient">Ingredients</a></li>
             <li><a href="recipes">Recipes</a></li>
-            <li><a href="menu_items">MenuItems</a></li>
+            <li><a href="menu_items">Menu Items</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="employee">Employee Info</a></li>
