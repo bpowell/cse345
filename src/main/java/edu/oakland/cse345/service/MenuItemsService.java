@@ -29,7 +29,7 @@ public class MenuItemsService extends AbstractJdbcDriver {
 
     public void insertMenuItems(String name, int m, int r, int s, int n, int c) {
             try {
-                    this.jdbcPostgres.update("insert into menu_items (name, meal_id, requirements_id, stars, num_sold, cost) values (?, ?, ?, ?, ?, ?)", name, m, r, s, n, c);
+                    this.jdbcPostgres.update("insert into menu_items (name, meal_id, recipes_id, stars, num_sold, cost) values (?, ?, ?, ?, ?, ?)", name, m, r, s, n, c);
             } catch(Exception e) {
                     log.error("{}", e);
             }
@@ -51,7 +51,7 @@ public class MenuItemsService extends AbstractJdbcDriver {
                     r.name = rs.getString("name");
                     r.id = rs.getInt("id");
                     r.meal_id = rs.getInt("meal_id");
-                    r.requirements_id = rs.getInt("requirements_id");
+                    r.recipes_id = rs.getInt("recipes_id");
                     r.stars = rs.getInt("stars");
                     r.num_sold = rs.getInt("num_sold");
                     r.cost = rs.getInt("cost");

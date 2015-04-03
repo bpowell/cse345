@@ -8,7 +8,7 @@
 <form action="menu_items" method="POST">
         Name: <input type="text" name="name" /><br />
         Meal Id: <input type="text" name="m" /><br />
-        Requirements Id: <input type="text" name="r" /><br />
+        Recipes Id: <input type="text" name="r" /><br />
         Number Sold: <input type="text" name="n" /><br />
         Stars: <input type="text" name="s" /><br />
         Cost: <input type="text" name="c" /><br />
@@ -23,7 +23,7 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Meal Id</th>
-                <th>Requirements Id</th>
+                <th>Recipes Id</th>
                 <th>Number Sold</th>
                 <th>Stars</th>
                 <th>Cost</th>
@@ -34,7 +34,7 @@
         <td>${t.getId()}</td>
         <td>${t.getName()}</td>
         <td>${t.getMeal_id()}</td>
-        <td>${t.getRequirements_id()}</td>
+        <td>${t.getRecipes_id()}</td>
         <td>${t.getNum_sold()}</td>
         <td>${t.getStars()}</td>
         <td>${t.getCost()}</td>

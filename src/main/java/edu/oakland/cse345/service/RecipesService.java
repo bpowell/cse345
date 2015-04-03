@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import edu.oakland.cse345.Constants;
-import edu.oakland.cse345.mvc.models.Requirements;
+import edu.oakland.cse345.mvc.models.Recipes;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,39 +15,39 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.*;
 
 @Service
-public class RequirementsService extends AbstractJdbcDriver {
+public class RecipesService extends AbstractJdbcDriver {
 	protected final Logger log = LoggerFactory.getLogger(getClass());
 
-    public Requirements getRequirements(int id) {
+    public Recipes getRecipes(int id) {
             try {
-                    return (Requirements) this.jdbcPostgres.queryForObject("select * from requirements where id = ?", new Object[] {id}, new RequirementsMapper());
+                    return (Recipes) this.jdbcPostgres.queryForObject("select * from recipes where id = ?", new Object[] {id}, new RecipesMapper());
             } catch(Exception e) {
                     log.error("{}", e);
             }
             return null;
     }
 
-    public void insertRequirements(int rid, int iid) {
+    public void insertRecipes(int rid, int iid) {
             try {
-                    this.jdbcPostgres.update("insert into requirements (menu_items_id, ingredient_id) values (?, ?)", rid, iid);
+                    this.jdbcPostgres.update("insert into recipes (menu_items_id, ingredient_id) values (?, ?)", rid, iid);
             } catch(Exception e) {
                     log.error("{}", e);
             }
     }
 
-    public List<Requirements> getAllRequirements() {
+    public List<Recipes> getAllRecipes() {
             try{
-                    List<Requirements> meals = new ArrayList<Requirements>();
-                    meals.addAll(this.jdbcPostgres.query("select * from requirements", new RequirementsMapper()));
+                    List<Recipes> meals = new ArrayList<Recipes>();
+                    meals.addAll(this.jdbcPostgres.query("select * from recipes", new RecipesMapper()));
                     return meals;
             } catch(Exception e) {
                     throw new IllegalArgumentException(e.getMessage());
             }
     }
 
-    private class RequirementsMapper implements RowMapper<Requirements>{
-            public Requirements mapRow(ResultSet rs, int rowNum) throws SQLException {
-                    Requirements r = new Requirements();
+    private class RecipesMapper implements RowMapper<Recipes>{
+            public Recipes mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    Recipes r = new Recipes();
                     r.id = rs.getInt("id");
                     r.menu_items_id = rs.getInt("menu_items_id");
                     r.ingredient_id = rs.getInt("ingredient_id");

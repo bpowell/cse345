@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import edu.oakland.cse345.service.IngredientTypesService;
 import edu.oakland.cse345.service.IngredientService;
-import edu.oakland.cse345.service.RequirementsService;
+import edu.oakland.cse345.service.RecipesService;
 import edu.oakland.cse345.service.EmployeeService;
 import edu.oakland.cse345.service.MenuItemsService;
 import edu.oakland.cse345.service.MealTypesService;
@@ -23,7 +23,7 @@ import edu.oakland.cse345.mvc.models.IngredientType;
 import edu.oakland.cse345.mvc.models.Ingredient;
 import edu.oakland.cse345.mvc.models.MealType;
 import edu.oakland.cse345.mvc.models.MenuItems;
-import edu.oakland.cse345.mvc.models.Requirements;
+import edu.oakland.cse345.mvc.models.Recipes;
 import edu.oakland.cse345.mvc.models.Employee;
 
 import java.util.List;
@@ -41,7 +41,7 @@ public class MainController{
     @Autowired
     IngredientService ingredientService;
     @Autowired
-    RequirementsService requirement;
+    RecipesService recipe;
     @Autowired
     MenuItemsService menu_item;
     @Autowired
@@ -107,19 +107,19 @@ public class MainController{
             return "redirect:ingredient";
     }
 
-    @RequestMapping(value="/requirements", method=RequestMethod.GET)
-    public String getRequirementss(Model model) {
-        List<Requirements> types = requirement.getAllRequirements();
+    @RequestMapping(value="/recipes", method=RequestMethod.GET)
+    public String getRecipess(Model model) {
+        List<Recipes> types = recipe.getAllRecipes();
         model.addAttribute("types", types.toArray());
 
-        return "requirements";
+        return "recipes";
     }
 
-    @RequestMapping(value="/requirements", method=RequestMethod.POST)
-    public String getRequirementss(Model model, @RequestParam("menu_item") int rid, @RequestParam("ingredient") int iid) {
-            requirement.insertRequirements(rid, iid);
+    @RequestMapping(value="/recipes", method=RequestMethod.POST)
+    public String getRecipess(Model model, @RequestParam("menu_item") int rid, @RequestParam("ingredient") int iid) {
+            recipe.insertRecipes(rid, iid);
 
-            return "redirect:requirements";
+            return "redirect:recipes";
     }
 
     @RequestMapping(value="/menu_items", method=RequestMethod.GET)

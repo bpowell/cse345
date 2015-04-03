@@ -7,7 +7,7 @@ drop table meal_type cascade
 drop table ingredient cascade
 ;
 
-drop table requirements cascade
+drop table recipes cascade
 ;
 
 drop table menu_items cascade

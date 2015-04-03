@@ -6,7 +6,7 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Meal Id</th>
-                <th>Requirements Id</th>
+                <th>Recipes Id</th>
                 <th>Number Sold</th>
                 <th>Stars</th>
                 <th>Cost</th>
@@ -16,7 +16,7 @@
         <td>${t.getId()}</td>
         <td>${t.getName()}</td>
         <td>${t.getMeal_id()}</td>
-        <td>${t.getRequirements_id()}</td>
+        <td>${t.getRecipes_id()}</td>
         <td>${t.getNum_sold()}</td>
         <td>${t.getStars()}</td>
         <td>${t.getCost()}</td>
