@@ -162,6 +162,7 @@ public class MainController{
         MenuItems m = menu_item.getMenuItems(id);
         model.addAttribute("types", types.toArray());
         model.addAttribute("name", m.getName());
+        model.addAttribute("num", menu_item.numOfMeals(id));
         return "rinfo";
     }
 }

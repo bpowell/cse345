@@ -2,6 +2,7 @@
 <%@ taglib prefix='form' uri='http://www.springframework.org/tags/form' %>
 
 <h2>${name}</h2>
+Can make ${num} ${name} <br />
 <table style="width:100%">
         <tr>
                 <th>Id</th>

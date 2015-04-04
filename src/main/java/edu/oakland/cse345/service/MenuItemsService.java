@@ -30,6 +30,16 @@ public class MenuItemsService extends AbstractJdbcDriver {
             return null;
     }
 
+    public int numOfMeals(int id) {
+            try {
+                    return this.jdbcPostgres.queryForInt("select distinct min(quantity) from ingredient where ingredient.id in (select ingredient_id from recipes where recipes.menu_items_id = (select recipes_id from menu_items where menu_items.id = ?))", new Object[] {id});
+            } catch(Exception e) {
+                    log.error("{}", e);
+            }
+
+            return 0;
+    }
+
     public MenuItems getMenuItems(int id) {
             try {
                     return (MenuItems) this.jdbcPostgres.queryForObject("select * from menu_items where id = ?", new Object[] {id}, new MenuItemsMapper());
