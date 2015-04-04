@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import edu.oakland.cse345.Constants;
 import edu.oakland.cse345.mvc.models.MenuItems;
+import edu.oakland.cse345.mvc.models.Ingredient;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,6 +18,17 @@ import org.springframework.jdbc.core.simple.*;
 @Service
 public class MenuItemsService extends AbstractJdbcDriver {
 	protected final Logger log = LoggerFactory.getLogger(getClass());
+
+    public List<Ingredient> getIngredientsFromMenuId(int id) {
+            try {
+                    List<Ingredient> a = new ArrayList<Ingredient>();
+                    a.addAll(this.jdbcPostgres.query("select * from ingredient where ingredient.id in (select ingredient_id from recipes where recipes.menu_items_id = (select recipes_id from menu_items where menu_items.id = ?))", new Object[] {id}, new IngredientMapper()));
+                    return a;
+            } catch(Exception e) {
+                    log.error("{}", e);
+            }
+            return null;
+    }
 
     public MenuItems getMenuItems(int id) {
             try {

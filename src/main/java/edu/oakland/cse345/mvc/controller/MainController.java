@@ -158,11 +158,10 @@ public class MainController{
 
     @RequestMapping(value="/rinfo", method=RequestMethod.POST)
     public String search(Model model, @RequestParam("id") int id) {
-        List<MenuItems> types = new ArrayList<MenuItems>();
-        types.add(menu_item.getMenuItems(id));
+        List<Ingredient> types = menu_item.getIngredientsFromMenuId(id);
+        MenuItems m = menu_item.getMenuItems(id);
         model.addAttribute("types", types.toArray());
-        log.info("size {}", types.size());
-        log.info("{}", types.get(0).name);
+        model.addAttribute("name", m.getName());
         return "rinfo";
     }
 }
