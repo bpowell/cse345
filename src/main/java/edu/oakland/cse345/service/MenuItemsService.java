@@ -40,6 +40,16 @@ public class MenuItemsService extends AbstractJdbcDriver {
             return 0;
     }
 
+    public int numOfMenuItems() {
+            try {
+                    return this.jdbcPostgres.queryForInt("select count(*) from menu_items");
+            } catch(Exception e) {
+                    log.error("{}", e);
+            }
+
+            return 0;
+    }
+
     public MenuItems getMenuItems(int id) {
             try {
                     return (MenuItems) this.jdbcPostgres.queryForObject("select * from menu_items where id = ?", new Object[] {id}, new MenuItemsMapper());

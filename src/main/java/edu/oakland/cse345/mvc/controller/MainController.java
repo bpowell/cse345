@@ -49,6 +49,7 @@ public class MainController{
 
     @RequestMapping("/")
     public String getIndex(Model model){
+        model.addAttribute("nMenuItems", menu_item.numOfMenuItems());
         return "index";
     }
 
