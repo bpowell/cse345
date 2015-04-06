@@ -16,7 +16,7 @@
         <input type="text" class="form-control" name="quantity" id="ingredientQuantity"/>
     </div>
     <div class="form-group">
-        <label for="ingredientType"Type Id:</label>
+        <label for="ingredientType">Type Id:</label>
         <input type="text" class="form-control" name="type" id="ingredientType"/>
     </div>
     <div class="form-group">
