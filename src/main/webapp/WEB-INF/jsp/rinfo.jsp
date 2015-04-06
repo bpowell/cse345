@@ -3,7 +3,7 @@
 
 <h2>${name}</h2>
 Can make ${num} ${name} <br />
-<table style="width:100%">
+<table class="table table-striped">
         <tr>
                 <th>Id</th>
                 <th>Name</th>

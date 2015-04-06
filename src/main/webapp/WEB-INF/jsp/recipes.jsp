@@ -14,7 +14,7 @@
 <br />
 
 <h2>List of Recipes</h2>
-<table style="width:100%">
+<table class="table table-striped">
         <tr>
                 <th>Id</th>
                 <th>Menu Item Id</th>

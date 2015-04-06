@@ -5,7 +5,7 @@
 <div class="page-header"><h1>Employee</h1></div>
 
 <h2>List of Employees</h2>
-<table style="width:100%">
+<table class="table table-striped">
         <tr>
                 <th>Id</th>
                 <th>Name</th>

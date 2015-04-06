@@ -18,7 +18,7 @@
 <br />
 
 <h2>List of Menu Items</h2>
-<table style="width:100%">
+<table class="table table-striped">
         <tr>
                 <th>Id</th>
                 <th>Name</th>
