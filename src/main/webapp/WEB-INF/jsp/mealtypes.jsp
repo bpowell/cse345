@@ -10,7 +10,7 @@
         <label for="mealTypeName">Type:</label>
         <input type="text" class="form-control" name="name" id="mealTypeName"/>
     </div>
-    <button type="submit" class="btn btn-default">Add</button>
+    <button type="submit" class="btn btn-primary">Add</button>
 </form>
 
 <br />

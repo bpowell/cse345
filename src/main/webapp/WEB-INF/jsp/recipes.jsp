@@ -14,7 +14,7 @@
         <label for="ingredientId">Ingredient Id:</label>
         <input type="text" class="form-control" name="ingredient" id="ingredientId"/>
     </div>
-    <button type="submit" class="btn btn-default">Add</button>
+    <button type="submit" class="btn btn-primary">Add</button>
 </form>
 
 <br/>

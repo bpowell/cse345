@@ -30,7 +30,7 @@
             <label for="menuItemCost">Cost:</label>
             <input type="text" class="form-control" name="c" id="menuItemCost"/>
     </div>
-    <button type="submit" class="btn btn-default">Add</button>
+    <button type="submit" class="btn btn-primary">Add</button>
 </form>
 
 <h2>List of Menu Items</h2>
@@ -54,7 +54,7 @@
         <td>${t.getNum_sold()}</td>
         <td>${t.getStars()}</td>
         <td>${t.getCost()}</td>
-        <td><button onclick="dostuff(${t.getId()})">Show</button></td>
+        <td><button class="btn btn-info" onclick="dostuff(${t.getId()})">Show</button></td>
 </tr>
 </c:forEach>
 </table>

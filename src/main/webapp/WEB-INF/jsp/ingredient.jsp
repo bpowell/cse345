@@ -23,7 +23,7 @@
         <label for="ingredientBoughtDate">Bought Date:</label>
         <input type="text" class="form-control" name="bought_date" id="ingredientBoughtDate"/>
     </div>
-    <button type="submit" class="btn btn-default">Add</button>
+    <button type="submit" class="btn btn-primary">Add</button>
 </form>
 
 <br/>
@@ -38,7 +38,7 @@
         <label for="ingredientType">Type:</label>
         <input type="hidden" class="form-control" name="type" value="ingredient" id="ingredientType"/>
     </div>
-    <button type="submit" class="btn btn-default">Search</button>
+    <button type="submit" class="btn btn-primary">Search</button>
 </form>
 
 <br />
