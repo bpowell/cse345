@@ -2,7 +2,7 @@
 <%@ taglib prefix='form' uri='http://www.springframework.org/tags/form' %>
 <jsp:directive.include file="header.jsp" />
 
-<div class="page-header"><h1>Awesome Database</h1></div>
+<h1 class="page-header" style="font-weight:bold;">Awesome Database</h1>
 <div>
         Number of Menu Items: ${nMenuItems}
 </div>

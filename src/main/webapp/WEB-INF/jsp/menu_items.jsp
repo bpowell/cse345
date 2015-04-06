@@ -2,7 +2,7 @@
 <%@ taglib prefix='form' uri='http://www.springframework.org/tags/form' %>
 <jsp:directive.include file="header.jsp" />
 
-<div class="page-header"><h1>Menu Items</h1></div>
+<h1 class="page-header" style="font-weight:bold;">Menu Items</h1>
 
 <h2>Insert Menu Items</h2>
 <form action="menu_items" method="POST">

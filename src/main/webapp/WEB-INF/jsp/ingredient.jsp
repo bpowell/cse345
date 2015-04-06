@@ -35,11 +35,10 @@
         <input type="text" class="form-control" name="name" id="itemName"/>
     </div>
     <div class="form-group">
-        <input type="hidden" name="type" value="ingredient"/>
+        <label for="ingredientType">Type:</label>
+        <input type="hidden" class="form-control" name="type" value="ingredient" id="ingredientType"/>
     </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-default">Search</button>
-    </div>
+    <button type="submit" class="btn btn-default">Search</button>
 </form>
 
 <br />
