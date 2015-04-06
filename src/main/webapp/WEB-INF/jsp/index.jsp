@@ -3,7 +3,7 @@
 <jsp:directive.include file="header.jsp" />
 
 <h1 class="page-header" style="font-weight:bold;">Awesome Database</h1>
-<div>
+<div class="alert alert-info" role="alert">
         Number of Menu Items: ${nMenuItems}
 </div>
 
