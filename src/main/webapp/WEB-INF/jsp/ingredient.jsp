@@ -2,7 +2,7 @@
 <%@ taglib prefix='form' uri='http://www.springframework.org/tags/form' %>
 <jsp:directive.include file="header.jsp" />
 
-<div class="page-header" style="font-weight:bold;"><h1>Ingredients</h1></div>
+<h1 class="page-header" style="font-weight:bold;">Ingredients</h1>
 
 <h2>Insert Ingredient</h2>
 
