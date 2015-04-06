@@ -2,7 +2,9 @@
 <%@ taglib prefix='form' uri='http://www.springframework.org/tags/form' %>
 
 <h2>${name}</h2>
-Can make ${num} ${name} <br />
+<div class="alert alert-success" role="alert">
+    <span style="font-size:1.75em;"><b>${num}</b></span> left!
+</div>
 <table class="table table-striped">
         <tr>
                 <th>Id</th>
