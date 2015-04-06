@@ -2,22 +2,46 @@
 <%@ taglib prefix='form' uri='http://www.springframework.org/tags/form' %>
 <jsp:directive.include file="header.jsp" />
 
-<div class="page-header"><h1>Ingredients</h1></div>
+<div class="page-header" style="font-weight:bold;"><h1>Ingredients</h1></div>
 
 <h2>Insert Ingredient</h2>
+
 <form action="ingredient" method="POST">
-        Name: <input type="text" name="name" /><br />
-        Quantity: <input type="text" name="quantity" /><br />
-        Type Id: <input type="text" name="type" /><br />
-        Bought Date: <input type="text" name="bought_date" /><br />
-        <input type="submit" value="Add">
+    <div class="form-group">
+        <label for="ingredientName">Name:</label>
+        <input type="text" class="form-control" name="name" id="ingredientName"/>
+    </div>
+    <div class="form-group">
+        <label for="ingredientQuantity">Quantity:</label>
+        <input type="text" class="form-control" name="quantity" id="ingredientQuantity"/>
+    </div>
+    <div class="form-group">
+        <label for="ingredientType"Type Id:</label>
+        <input type="text" class="form-control" name="type" id="ingredientType"/>
+    </div>
+    <div class="form-group">
+        <label for="ingredientBoughtDate">Bought Date:</label>
+        <input type="text" class="form-control" name="bought_date" id="ingredientBoughtDate"/>
+    </div>
+    <button type="submit" class="btn btn-default">Add</button>
 </form>
-<br />
+
+<br/>
+
+<h2>Search for Ingredient</h2>
 <form action="search" method="POST">
-	Item Name: <input type="text" name="name" />
-	<input type="hidden" name="type" value="ingredient" />
-	<input type="submit" value="Search">
+    <div class="form-group">
+        <label for="itemName">Item Name:</label>
+        <input type="text" class="form-control" name="name" id="itemName"/>
+    </div>
+    <div class="form-group">
+        <input type="hidden" name="type" value="ingredient"/>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-default">Search</button>
+    </div>
 </form>
+
 <br />
 <br />
 

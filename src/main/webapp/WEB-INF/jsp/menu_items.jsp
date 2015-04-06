@@ -6,16 +6,32 @@
 
 <h2>Insert Menu Items</h2>
 <form action="menu_items" method="POST">
-        Name: <input type="text" name="name" /><br />
-        Meal Id: <input type="text" name="m" /><br />
-        Recipes Id: <input type="text" name="r" /><br />
-        Number Sold: <input type="text" name="n" /><br />
-        Stars: <input type="text" name="s" /><br />
-        Cost: <input type="text" name="c" /><br />
-        <input type="submit" value="Add">
+    <div class="form-group">
+            <label for="menuItemName">Name:</label>
+            <input type="text" class="form-control" name="name" id="menuItemName"/>
+    </div>
+    <div class="form-group">
+            <label for="menuItemId">Meal Id:</label>
+            <input type="text" class="form-control" name="m" id="menuItemId"/>
+    </div>
+    <div class="form-group">
+            <label for="menuItemRecipeId">Recipes Id:</label>
+            <input type="text" class="form-control" name="r" id="menuItemRecipeId"/>
+    </div>
+    <div class="form-group">
+            <label for="menuItemNumberSold">Number Sold:</label>
+             <input type="text" class="form-control" name="n" id="menuItemNumberSold"/>
+    </div>
+    <div class="form-group">
+            <label for="menuItemStars">Stars:</label>
+            <input type="text" class="form-control" name="s" id="menuItemStars"/>
+    </div>
+    <div class="form-group">
+            <label for="menuItemCost">Cost:</label>
+            <input type="text" class="form-control" name="c" id="menuItemCost"/>
+    </div>
+    <button type="submit" class="btn btn-default">Add</button>
 </form>
-<br />
-<br />
 
 <h2>List of Menu Items</h2>
 <table class="table table-striped">

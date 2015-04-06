@@ -2,13 +2,17 @@
 <%@ taglib prefix='form' uri='http://www.springframework.org/tags/form' %>
 <jsp:directive.include file="header.jsp" />
 
-<div class="page-header"><h1>Meal Types</h1></div>
+<h1 class="page-header" style="font-weight:bold;">Meal Types</h1>
 
 <h2>Insert Meal Type</h2>
 <form action="mealtypes" method="POST">
-        Type: <input type="text" name="name" />
-        <input type="submit" value="Add">
+    <div class="form-group">
+        <label for="mealTypeName">Type:</label>
+        <input type="text" class="form-control" name="name" id="mealTypeName"/>
+    </div>
+    <button type="submit" class="btn btn-default">Add</button>
 </form>
+
 <br />
 
 <h2>List of Meal Types</h2>

@@ -2,16 +2,23 @@
 <%@ taglib prefix='form' uri='http://www.springframework.org/tags/form' %>
 <jsp:directive.include file="header.jsp" />
 
-<div class="page-header"><h1>Recipes</h1></div>
+<h1 class="page-header" style="font-weight:bold;">Recipes</h1>
 
 <h2>Insert Recipe</h2>
 <form action="recipes" method="POST">
-        Menu Item Id: <input type="text" name="menu_item" /><br />
-        Ingredient Id: <input type="text" name="ingredient" /><br />
-        <input type="submit" value="Add">
+    <div class="form-group">
+        <label for="menuItemId">Menu Item Id:</label>
+        <input type="text" class="form-control" name="menu_item" id="menuItemId"/>
+    </div>
+    <div class="form-group">
+        <label for="ingredientId">Ingredient Id:</label>
+        <input type="text" class="form-control" name="ingredient" id="ingredientId"/>
+    </div>
+    <button type="submit" class="btn btn-default">Add</button>
 </form>
-<br />
-<br />
+
+<br/>
+<br/>
 
 <h2>List of Recipes</h2>
 <table class="table table-striped">
