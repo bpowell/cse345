@@ -4,7 +4,7 @@
 
 <h1 class="page-header" style="font-weight:bold;">Menu Items</h1>
 
-<h2>Insert Menu Items</h2>
+<h2>Add Menu Items</h2>
 <form action="menu_items" method="POST">
     <div class="form-group">
             <label for="menuItemName">Name:</label>

@@ -4,7 +4,7 @@
 
 <h1 class="page-header" style="font-weight:bold;">Ingredient Types</h1>
 
-<h2>Insert Ingredient Type</h2>
+<h2>Add Ingredient Type</h2>
 <form action="ingredienttypes" method="POST">
     <div class="form-group">
         <label for="ingredientTypeName">Type:</label>

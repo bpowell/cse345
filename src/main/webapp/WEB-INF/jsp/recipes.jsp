@@ -4,7 +4,7 @@
 
 <h1 class="page-header" style="font-weight:bold;">Recipes</h1>
 
-<h2>Insert Recipe</h2>
+<h2>Add Recipe</h2>
 <form action="recipes" method="POST">
     <div class="form-group">
         <label for="menuItemId">Menu Item Id:</label>

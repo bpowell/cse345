@@ -4,8 +4,7 @@
 
 <h1 class="page-header" style="font-weight:bold;">Ingredients</h1>
 
-<h2>Insert Ingredient</h2>
-
+<h2>Add Ingredient</h2>
 <form action="ingredient" method="POST">
     <div class="form-group">
         <label for="ingredientName">Name:</label>

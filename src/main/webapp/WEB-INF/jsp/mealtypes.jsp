@@ -4,7 +4,7 @@
 
 <h1 class="page-header" style="font-weight:bold;">Meal Types</h1>
 
-<h2>Insert Meal Type</h2>
+<h2>Add Meal Type</h2>
 <form action="mealtypes" method="POST">
     <div class="form-group">
         <label for="mealTypeName">Type:</label>
